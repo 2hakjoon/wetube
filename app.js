@@ -11,7 +11,10 @@ import routes from "./routes";
 
 const app = express();
 
+
+
 //미들웨어로써 현재 전역으로 선언되어 있어 모든 route에 접근 할 때, 먼저 실행함. 
+app.set ('view engine', "pug")
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
