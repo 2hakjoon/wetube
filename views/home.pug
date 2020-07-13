@@ -1,4 +1,13 @@
 extends layouts/main.pug
 
+include mixins/videoBlock
+
 block content
-    p Home
+    .videos
+        each video in videoList
+            +videoBlock({
+                id:video.id,
+                title:video.title,
+                views:video.views,
+                videoFile:video.videoFile,
+            })
