@@ -1,4 +1,15 @@
 extends layouts/main
 
 block content
-    p Video Detail
+    .video__player
+        video(src=`/${videoList.fileUrl}`)
+    .video__info
+        a(href=routes.editVideo(videoList.id)) Edit Video
+        h5.video__title=videoList.title
+        span.video__view=videoList.views
+        p.video__description=videoList.description
+    .video__comments
+        if videoList.comments.length === 1
+            span.video__comment-number 1 comment
+        else
+            span.video__comment-number #{videoList.comments.length} comments
