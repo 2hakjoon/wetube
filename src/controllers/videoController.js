@@ -7,11 +7,12 @@ export const home = async(req, res) =>{
     try {
         const videoList = await Video.find({}).sort({_id:-1});
         res.render("home", { pageTitle: "Home", videoList });
-      } catch (error) {
+    } 
+    catch (error) {
         console.log(error);
         res.render("home", { pageTitle: "Home", videoList });
-      }
-    };
+    }
+ };
 
 export const search = async(req, res) =>{
     const { 
