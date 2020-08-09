@@ -13,7 +13,7 @@
     "prebuild": "rm -rf build",
     "tunnel": "lt --port 4000",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node build/init.js",
+    "start": "PRODUCTION=true node build/init.js",
     "prestart": "npm run build"
   },
   "author": "Hakjoon",
@@ -44,6 +44,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
+    "nodemon": "^2.0.4",
     "node-sass": "^4.14.1",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
@@ -59,6 +60,5 @@
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
     "eslint": "^7.4.0",
-    "nodemon": "^2.0.4"
   }
 }
