@@ -13,6 +13,7 @@ const handleVideoData = (event) => {
     document.body.appendChild(link);
     link.click();
 }
+
 const stopRecording = () => {
     videoRecorder.stop();
     recordBtn.removeEventListener("click", stopRecording);
@@ -43,7 +44,6 @@ const getVideo = async() => {
     }
     catch(error){
         recordBtn.innerHTML = "Can't Record";
-        recordBtn.removeEventListener("click", getVideo);
     }
     finally{
         recordBtn.removeEventListener("click", getVideo);
